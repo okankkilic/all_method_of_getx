@@ -2,13 +2,20 @@ import 'package:all_get_method/pages/home_page.dart';
 import 'package:all_get_method/pages/named_page.dart';
 import 'package:all_get_method/pages/unknown_route.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:get/get_navigation/src/routes/get_route.dart';
+import 'package:get/get.dart';
 
+import 'controllers/service.dart';
 import 'data/messages.dart';
 
-void main() {
-  runApp(const MyApp());
+Future<void> main() async {
+  await initServices();
+  runApp(MyApp());
+}
+
+Future<void> initServices() async {
+  print('starting services...');
+  await Get.putAsync<MyService>(() async => MyService());
+  print('All services started...');
 }
 
 class MyApp extends StatelessWidget {

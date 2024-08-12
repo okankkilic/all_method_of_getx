@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 class GetXCounterPage extends StatelessWidget {
   GetXCounterPage({super.key});
 
-  MyController myController = Get.put(MyController());
+  MyController myController = Get.put(MyController(), permanent: true);
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,3 +1,4 @@
+import 'package:all_get_method/pages/get_lazyPut_page.dart';
 import 'package:all_get_method/pages/second_page.dart';
 import 'package:all_get_method/pages/translation_page.dart';
 import 'package:all_get_method/pages/upper_lower_page.dart';
@@ -6,6 +7,8 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 
 import 'CounterPage.dart';
+import 'get_off_page.dart';
+import 'get_put_async.dart';
 import 'getx_counter_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -195,6 +198,13 @@ class HomePage extends StatelessWidget {
                   );
                 }),
             ElevatedButton(
+                child: Text("Get Off Page"),
+                onPressed: () {
+                  Get.to(
+                    GetOffPage(),
+                  );
+                }),
+            ElevatedButton(
                 child: const Text("Counter"),
                 onPressed: () {
                   Get.to(
@@ -219,7 +229,21 @@ class HomePage extends StatelessWidget {
                 child: const Text("Languages"),
                 onPressed: () {
                   Get.to(
-                    () => TranslationPage(),
+                    () => const TranslationPage(),
+                  );
+                }),
+            ElevatedButton(
+                child: const Text("Get Lazy Put"),
+                onPressed: () {
+                  Get.to(
+                    () => GetLazyPut(),
+                  );
+                }),
+            ElevatedButton(
+                child: const Text("Get putAsync/Service"),
+                onPressed: () {
+                  Get.to(
+                    () => const GetPutAsync(),
                   );
                 }),
           ],
